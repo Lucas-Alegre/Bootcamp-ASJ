@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Hola mundo, instrucciones</h1>
+    <ol>
+        <li>Encender la compu</li>
+        <li>Usar la compu</li>
+        <li>Apagar la compu</li>
+    </ol>
+
+    <img src="https://humanidades.com/wp-content/uploads/2019/02/piramides-egipcias-e1586619815545.jpg"
+        alt="Piramides de Egipto" width=" 600px" height="400px">
+    <br>
+    <img src="img/roma.jpg" alt="Coliseo Romano" width=" 600px" height="400px">
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Alumno</th>
+                <th>Sueldo Bruto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>juana</td>
+                <td>250.000</td>
+            </tr>
+            <tr>
+                <td>juan</td>
+                <td>280.000</td>
+            </tr>
+            <tr>
+                <td>juanito</td>
+                <td>350.354</td>
+            </tr>
+            <tr>
+                <td>juancho</td>
+                <td>340.987</td>
+            </tr>
+            <tr>
+                <td colspan="2">340.987</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br>
+    <form action="php/insertar_cv.php" method="post"   id="form form2" >
+        <fieldset >
+            <legend>Información Personal</legend>
+
+            <label>Nombre</label>
+            <input type="text" name="nombre" placeholder="Nombre" maxlength="30" required disabled="disabled">
+            <br> <br>
+            <label>Apellido</label>
+            <input type="text" name="apellido" placeholder="Apellido" minlength="5"  maxlength="80" required >
+            <br> <br>
+            <label>Contraseña</label>
+            <input type="password" name="pass" placeholder="Contraseña" maxlength="10" required>
+            <br> <br>
+            <label>Dni</label>
+            <input type="number" name="dni" maxlength="8" required>
+            <br> <br>
+            <label>Sexo</label><br>
+            <input type="radio" name="genero" value="Hombre"><label>Hombre</label><br>
+            <input type="radio" name="genero" value="Mujer"><label>Mujer</label>
+            <br> <br>
+            <label>Incluir mi foto </label><input type="file">
+            <br> <br>
+            <input type="checkbox"><label>Subscribirme al boletin de novedades</label>
+            <br> <br>
+            <button type="submit">Guardar cambios</button>
+        </fieldset>
+    </form>
+
+
+</body>
+
+</html>
