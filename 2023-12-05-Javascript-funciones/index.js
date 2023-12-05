@@ -50,11 +50,12 @@ const entrarAMirar = () => {
   console.log("Hola, buenas, que disfrute este lugar");
 };
 
-let numero = parseInt(
+let numero2 = parseInt(
   prompt(
     "Hola usuario, que desea hacer? \n 1- Saludar. \n 2- Pedir algo. \n 3- Solo entrar a mirar"
   )
 );
+let numero = 2;
 
 let total = 0;
 while (numero != 0) {
@@ -76,6 +77,7 @@ while (numero != 0) {
       entrarAMirar();
       break;
   }
+
   numero = parseInt(
     prompt(
       "Hola usuario, que desea hacer? \n 1- Saludar. \n 2- Pedir algo. \n 3- Solo entrar a mirar"
