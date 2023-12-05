@@ -1,17 +1,26 @@
 let dibujo = "";
-let numero = 5;
+let dibujo2 = "";
+let espacio;
+let numeroADibujar = parseInt(
+  prompt("Ingrese una cantidad de escalones a dibujar")
+);
 
-for (let i = 0; i < numero; i++) {
-  for (let j = 0; j <= i; j++) {
+for (let i = 0; i < numeroADibujar; i++) {
+  //filas
+  for (let j = -1; j < i; j++) {
+    //columnas de ateriscos
     dibujo += "* ";
+    if (j < numeroADibujar && j > -1) {
+      dibujo2 = "* " + dibujo2 + " ";
+    }
   }
-  dibujo += "\n";
-}
-for (let i = numero-2; i >= 0; i--) {
-  for (let j = 0; j <= i; j++) {
-    dibujo += "* ";
-  }
-  dibujo += "\n";
-}
 
-console.log(dibujo);
+  if (i < numeroADibujar - 1) {
+    dibujo += "\n";
+  }
+
+  dibujo2 = "\n" + dibujo2;
+}
+// Big O ( n 2 )
+
+alert(dibujo + dibujo2);
