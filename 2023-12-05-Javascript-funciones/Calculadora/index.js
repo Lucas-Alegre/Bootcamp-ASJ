@@ -3,7 +3,6 @@ let numerando1 = 0;
 let operacionRealizada = "";
 
 let botonesPrueba = document.getElementsByClassName("botonesPrueba");
-
 let btntotal = document.getElementById("total");
 let btnigual = document.getElementById("btn-igual");
 
