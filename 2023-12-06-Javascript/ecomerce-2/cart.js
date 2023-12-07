@@ -33,15 +33,15 @@ for (let i = 0; i < arrayProductos.length; i++) {
 
   contenedorCar.appendChild(divContenedor);
 }
-let filtrar=[]
+let filtrar = [];
 let arrayProductosAux = JSON.parse(localStorage.getItem("productos"));
 
 let scar = document.getElementsByClassName("quitar");
 
 for (let i = 0; i < scar.length; i++) {
-  i.addEventListener("click", () => {
-    filtrar=arrayProductosAux.filter(producto=>scar[i].id===producto.id) 
-    localStorage.setItem("productos", JSON.stringify(filtrar)); 
+  scar[i].addEventListener("click", () => {
+    filtrar = arrayProductosAux.filter((producto) => scar[i].id != producto.id);
+    localStorage.setItem("productos", JSON.stringify(filtrar));
+    location.href = "cart.html";
   });
 }
-
