@@ -37,7 +37,7 @@ let editarProveedoresStorage = JSON.parse(
   localStorage.getItem("editarProveedor")
 );
 nombreyCodigom.innerText = `Editar proveedor ${editarProveedoresStorage[0].name} ${editarProveedoresStorage[0].apellido} de codigo ${editarProveedoresStorage[0].codigoUnico}`;
-
+nombre.setAttribute("placeholder", editarProveedoresStorage[0].name);
 if (proveedoresStorage) {
   proveedores = proveedoresStorage;
 }
@@ -54,7 +54,7 @@ submit.addEventListener("click", (e) => {
     email: email.value,
   };
   let proveedorEditado = [];
-  proveedorEditado = JSON.parse(localStorage.getItem("proveedores"))
+  proveedorEditado = JSON.parse(localStorage.getItem("proveedores"));
   proveedorEditado = proveedorEditado.filter(
     (proveedor) =>
       proveedor.codigoUnico != editarProveedoresStorage[0].codigoUnico
