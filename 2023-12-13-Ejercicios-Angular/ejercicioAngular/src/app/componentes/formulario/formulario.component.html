@@ -1,0 +1,19 @@
+
+
+<div class="form-group">
+  <label for="exampleInputEmail1">Titulo: </label>
+  <input type="text" class="form-control" aria-describedby="emailHelp"
+    placeholder="Titulo" [(ngModel)]="titulo">
+</div>
+<div class="form-group">
+  <label for="exampleInputPassword1">Frase</label>
+  <input type="text" class="form-control" placeholder="Frase"
+    [(ngModel)]="frase">
+</div>
+<div class="form-group">
+  <label for="exampleInputPassword1">Autor</label>
+  <input type="text" class="form-control" placeholder="Autor"
+    [(ngModel)]="autor">
+</div>
+<button type="button" class="btn btn-primary" (click)="enviar()">Submit</button>
+<br><br><br>
