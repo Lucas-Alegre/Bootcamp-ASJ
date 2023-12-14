@@ -12,6 +12,9 @@ import { MainComponent } from './componentes/main/main.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { FormularioComponent } from './componentes/formulario/formulario.component';
 import { CardComponent } from './componentes/card/card.component';
+import { SimpsonMainComponent } from './componentes-Simpson/simpson-main/simpson-main.component';
+import { SimpsongFormularioComponent } from './componentes-Simpson/simpsong-formulario/simpsong-formulario.component';
+import { SimpsongListadoComponent } from './componentes-Simpson/simpsong-listado/simpsong-listado.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { CardComponent } from './componentes/card/card.component';
     MainComponent,
     FooterComponent,
     FormularioComponent,
-    CardComponent
+    CardComponent,
+    SimpsonMainComponent,
+    SimpsongFormularioComponent,
+    SimpsongListadoComponent
   ],
   imports: [
     FormsModule,
