@@ -1,21 +1,10 @@
-<p>simpson-main works!</p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quod suscipit
-dicta repellendus, nam nemo modi, at, similique dolor magni hic harum cumque
-blanditiis? Iusto dolores placeat numquam corporis nam.
-
 <main>
     <div class="row">
-        <div class="col-5  m-5"> Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Atque, harum similique! Cumque voluptatem corporis
-            tempora exercitationem odio praesentium, ullam voluptates nemo
-            cupiditate officia accusamus eligendi. Ratione facilis aspernatur
-            eveniet ex!
+        <div class="col-5  m-5"> 
             <app-simpsong-formulario (childEmitter)="printName($event)"></app-simpsong-formulario>
-            {{objetSimpson | json}}
         </div>
         <div class="col-5 m-5">
             <app-simpsong-listado [entrada]="objetSimpson"></app-simpsong-listado>
-
         </div>
     </div>
 </main>
