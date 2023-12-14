@@ -6,8 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  titulo = localStorage.getItem("titulo");
-  frase = localStorage.getItem("frase");
-  autor = localStorage.getItem("autor");
-  users=[{titulo: this.titulo, frase: this.frase, autor: this.autor}]
+  users: any = JSON.parse(localStorage.getItem("frases")||"null");
 }

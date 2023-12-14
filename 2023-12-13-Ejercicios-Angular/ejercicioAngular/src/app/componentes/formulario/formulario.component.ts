@@ -9,15 +9,22 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent {
-   titulo= "";
-   frase= "";
-   autor= "";
+  titulo = "";
+  frase = "";
+  autor = "";
+  listaFrases: any = JSON.parse(localStorage.getItem("frases")||"null");
+  objeto = {}
 
-  enviar(){
-    localStorage.setItem("titulo", this.titulo.toString());
-    localStorage.setItem("frase", this.frase.toString());
-    localStorage.setItem("autor", this.autor.toString());
-    window.location.href = "/"; 
+
+  enviar() {
+    this.objeto = {
+      titulo: this.titulo,
+      frases: this.frase,
+      autor: this.autor
+    }
+    this.listaFrases.push(this.objeto)
+    localStorage.setItem("frases", JSON.stringify(this.listaFrases));
+    window.location.href = "/";
   }
 }
 

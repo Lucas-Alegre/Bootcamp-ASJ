@@ -1,8 +1,15 @@
-#navbarNav{
-    display: flex;
-    justify-content:space-between;
-}
-nav{
+nav {
     position: fixed;
     width: 100%;
+
+}
+
+.nav {
+    color: white;
+}
+
+.nav-contenedor {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
 }
