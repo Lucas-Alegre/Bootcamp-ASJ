@@ -16,6 +16,11 @@ import { SimpsonMainComponent } from './componentes-Simpson/simpson-main/simpson
 import { SimpsongFormularioComponent } from './componentes-Simpson/simpsong-formulario/simpsong-formulario.component';
 import { SimpsongListadoComponent } from './componentes-Simpson/simpsong-listado/simpsong-listado.component';
 import { HomeComponent } from './home/home.component';
+import { PersonajeMainComponent } from './componentes/18-12-componentes-personajes/personaje-main/personaje-main.component';
+import { PersonajeTableComponent } from './componentes/18-12-componentes-personajes/personaje-table/personaje-table.component';
+import { PersonajeCardComponent } from './componentes/18-12-componentes-personajes/personaje-card/personaje-card.component';
+import { PersonajesService } from './service/personajes.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,14 +34,18 @@ import { HomeComponent } from './home/home.component';
     SimpsonMainComponent,
     SimpsongFormularioComponent,
     SimpsongListadoComponent,
-    HomeComponent
+    HomeComponent,
+    PersonajeMainComponent,
+    PersonajeTableComponent,
+    PersonajeCardComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PersonajesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
