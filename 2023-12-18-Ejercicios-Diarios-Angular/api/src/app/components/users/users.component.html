@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-md-7">
+        <h3>Listado de usuarios</h3>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Avatar</th>
+                    <th>....</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of usuarios">
+                    <td>
+                        <img src="{{u.avatar}}" alt="{{u.first_name}}">
+                    </td>
+                    <td>{{u.first_name}}</td>
+                    <td>{{u.last_name}}</td>
+
+                    <td>
+                        <button class="btn btn-sm btn-outline-secondary" (click)="update(u)">modificar</button>
+                        <button class="btn btn-sm btn-outline-danger" (click)="delete(u.id)">eliminar</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="col-md-5">
+        <h3>Crear usuarios</h3>
+        <form #miForm="ngForm" (ngSubmit)="create(miForm)">
+            <input
+             type="hidden" 
+             name="id" 
+             [(ngModel)]="userService.datosUsuarios.id">
+            <div class="mb-5">
+                <label class="form-label">name</label>
+                <input
+                    class="form-control"
+                    placeholder="Nombre"
+                    type="text"
+                    name="name"
+                    [(ngModel)]="userService.datosUsuarios.name">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Trabajo</label>
+                <input
+                    class="form-control"
+                    placeholder="Trabajo"
+                    type="text"
+                    name="job"
+                    [(ngModel)]="userService.datosUsuarios.job">
+            </div>
+            <button type="submit" class="btn btn-outline-success me-2">Guardar</button>
+            <button class="btn btn-outline-danger me-2" (click)="reset(miForm)">Limpiar</button>
+        </form>
+    </div>
+</div>
