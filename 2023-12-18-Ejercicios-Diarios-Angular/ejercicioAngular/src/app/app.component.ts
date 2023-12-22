@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ejercicioAngular';
+  nombre="Lucas";
+  apellido="AlEgrE"
+  total=34.35; 
+  fecha=new Date()
+
 }
