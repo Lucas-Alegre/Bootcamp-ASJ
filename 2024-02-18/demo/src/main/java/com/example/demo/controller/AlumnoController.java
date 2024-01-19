@@ -78,14 +78,17 @@ public class AlumnoController {
 				return "Se elimno un Alumno";
 			}
 		}
-		return "No de úede eliminar un Alumno";
+		return "No de puede eliminar un Alumno";
 	}
 
 	@PutMapping("/{id}") 
 	public Alumno updateAlumno(@PathVariable int id, @RequestBody Alumno alumno) { 
 		for (Alumno alum : alumnos) { 
 			if(alum.getId() == id) { 
-				return alum; 
+				alum.setNombre(alumno.getNombre());
+				alum.setApellido(alumno.getApellido());
+				alum.setNota(alumno.getNota());
+				return alumno; 
 			} 
 		} return null;
 	}
