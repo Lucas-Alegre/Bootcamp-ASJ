@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRUD</title>
+    </head>
+    <body>
+        <h1>Metodo GET</h1>
+        <ul id="listado">
+            
+        </ul>
+        <form action="/alumnos" method="post">
+            <label for="">id</label>
+            <input type="number" name="id" id="id">
+            <label for="">nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <label for="">apellido</label>
+            <input type="text" name="apellido" id="apellido">
+            <label for="">nota</label>
+            <input type="number" name="nota" id="nota">
+        </form>
+        <script>
+            
+            fetch('localhost:8080/alumnos')
+            .then(response => response.json())
+            .then(json => {const  item= document.createElement("li");
+            item.innerText=json.id;
+            list.appendChild(item);
+            })
+            .catch(err => console.log('Solicitud fallida', err));
+        
+            const list=document.getElementById("listado");
+            
+   
+    </script>
+
+    </body>
+</html>

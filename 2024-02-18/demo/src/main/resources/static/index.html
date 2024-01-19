@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRUD</title>
+    </head>
+    <body>
+        <h1>Metodo GET</h1>
+         <ul id="listado"> </ul>
+          <form >
+            <label for="">id</label>
+            <input type="number" name="id" id="id">
+            <label for="">nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <label for="">apellido</label>
+            <input type="text" name="apellido" id="apellido">
+            <label for="">nota</label>
+            <input type="number" name="nota" id="nota">
+            <button type="submit" id="butonForm">Enviar</button>
+        </form>
+        <form style="display: none;">
+            <label for="">nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <label for="">apellido</label>
+            <input type="text" name="apellido" id="apellido">
+            <label for="">nota</label>
+            <input type="number" name="nota" id="nota">
+            <button type="submit" id="butonFormEdit">Enviar</button>
+        </form>
+         
+        <script>
+			function editar(id){
+				 fetch('/alumnos/'+id)
+            .then(response =>  response.json())
+            .then(json => {
+				
+			})
+            .catch(err => console.log('Solicitud fallida', err));
+			}
+			
+			const list=document.getElementById("listado");
+			let datos=[];
+			//GET Alumnos
+              fetch('/alumnos')
+            .then(response =>  response.json())
+            .then(json => {
+				console.log(json)
+               json.forEach(alumno=>{
+                   const modificar = document.createElement("a");
+                   //"/alumnos/"+
+                   modificar.setAttribute("onclick","editar(`${alumno.id}`)")
+                   modificar.innerText="editar";
+				   let item = document.createElement("li");
+				   item.textContent=`${alumno.nota} ${alumno.apellido} ${alumno.nombre}`;
+				   list.appendChild(item);
+				   list.appendChild(modificar)
+			   })
+            }
+            )
+            .catch(err => console.log('Solicitud fallida', err));
+     
+            //POST Alumnos
+            let id = document.getElementById("id")
+            let nombre = document.getElementById("nombre")
+            let apellido = document.getElementById("apellido")
+            let nota = document.getElementById("nota")
+            let button = document.getElementById("butonForm");
+            button.addEventListener("click", (e)=>{
+				e.preventDefault();
+				fetch('/alumnos', {
+              method: "POST",
+              headers: {"Content-type": "application/json;"},
+              body: JSON.stringify({
+                   id: parseInt(id.value),
+                   nombre: nombre.value,
+                   apellido: apellido.value,
+                   nota:parseInt(nota.value)
+             })
+                 })
+                  .then(response => response.json()) 
+                  .then(json => window.location.replace("/index.html"))
+                  .catch(err => console.log(err));
+			})
+           
+
+              
+    </script>
+
+    </body>
+</html>
