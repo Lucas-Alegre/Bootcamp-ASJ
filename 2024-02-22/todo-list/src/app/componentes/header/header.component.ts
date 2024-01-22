@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  options = ["Home", "Shop", "Demos", "Blocks", "Components", "Contact Us", "My Cart"]
+  options = ["Home", "Shop", "My Cart"]
 }
